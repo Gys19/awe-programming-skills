@@ -12,12 +12,10 @@ from tqdm import tqdm
 def myfunc(a):
     time.sleep(random.random())
     return a ** 2
-
 pool = Pool(2)
-'''
+
 for _ in tqdm(pool.imap_unordered(myfunc, range(100)), total=100):
     pass
-'''
 pbar = tqdm(total=100)
 def update(*a):
     pbar.update()
