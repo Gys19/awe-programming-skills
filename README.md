@@ -3,7 +3,8 @@ to collect some awe programming skills
 
 
 # parallel computing and show the progress bar at the same time
-'''json
+
+'''
 import time
 import random
 from multiprocessing import Pool
