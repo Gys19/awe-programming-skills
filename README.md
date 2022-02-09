@@ -2,7 +2,8 @@
 to collect some awe programming skills
 
 
-# parallel computing and show the progress bar at the same time
+* parallel computing and show the progress bar at the same time 
+Cite from [link](https://github.com/tqdm/tqdm/issues/484)
 
 ```javascript
 import time
