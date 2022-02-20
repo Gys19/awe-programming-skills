@@ -2,7 +2,7 @@
 to collect some awe programming skills
 
 
-* parallel computing and show the progress bar at the same time 
+## parallel computing and show the progress bar at the same time 
 Cite from [link](https://github.com/tqdm/tqdm/issues/484)
 
 ```javascript
@@ -27,4 +27,23 @@ for i in range(pbar.total):
 # tqdm.write('scheduled')
 pool.close()
 pool.join()
+```
+
+## Git Bash commands
+* check and change the branch name
+```
+git branch
+git brach -m <old name> <new name>
+```
+* pull the remote repo to local 
+```
+git pull origin main 
+```
+* push the local to remote repo
+```
+git push origin main
+```
+* commit changes
+```
+git commit -m "First commit Message"
 ```
