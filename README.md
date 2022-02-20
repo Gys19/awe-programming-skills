@@ -47,3 +47,11 @@ git push origin main
 ```
 git commit -m "First commit Message"
 ```
+* delete the old branch
+```
+git push origin --delete <oldname>
+```
+* push new branch to repo
+```
+git push origin -u <newname>
+```
