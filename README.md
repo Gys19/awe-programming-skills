@@ -30,6 +30,12 @@ pool.join()
 ```
 
 ## Git Bash commands
+* initialization, the second line is used to link to your remote repo
+```
+git init
+git remote add origin https://...
+```
+
 * check and change the branch name
 ```
 git branch
