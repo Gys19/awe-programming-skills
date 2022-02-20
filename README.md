@@ -33,7 +33,8 @@ pool.join()
 * check and change the branch name
 ```
 git branch
-git brach -m <old name> <new name>
+git branch -m <old name> <new name>
+git branch -m <new name>
 ```
 * pull the remote repo to local 
 ```
