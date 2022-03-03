@@ -70,9 +70,6 @@ git push origin -u <newname>
 ```javascript
 distance_delta = 0.9
 distances = np.arange(0, line.length, distance_delta)
-# or alternatively without NumPy:
-# points_count = int(line.length // distance_delta) + 1
-# distances = (distance_delta * i for i in range(points_count))
 points = [line.interpolate(distance) for distance in distances] + [line.boundary[1]]
 multipoint = unary_union(points)  # or new_line = LineString(points)
 ```
