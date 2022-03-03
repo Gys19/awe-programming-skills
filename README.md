@@ -5,6 +5,9 @@ to collect some awe programming skills
 ## parallel computing and show the progress bar at the same time 
 Cite from [link](https://github.com/tqdm/tqdm/issues/484)
 
+There are two points we need to pay attention when we apply below code.
+* if you have a function wrote in a class object, please aovid any function callback in __init__ function 
+* please add a output for pool if possible. 
 ```javascript
 import time
 import random
@@ -21,10 +24,8 @@ for _ in tqdm(pool.imap_unordered(myfunc, range(100)), total=100):
 pbar = tqdm(total=100)
 def update(*a):
     pbar.update()
-    # tqdm.write(str(a))
 for i in range(pbar.total):
     pool.apply_async(myfunc, args=(i,), callback=update)
-# tqdm.write('scheduled')
 pool.close()
 pool.join()
 ```
@@ -61,4 +62,17 @@ git push origin --delete <oldname>
 * push new branch to repo
 ```
 git push origin -u <newname>
+```
+
+## Some geospatial operations 
+* Geopandas, shapely, osmnx. networkx.
+* generates points along line 
+```javascript
+distance_delta = 0.9
+distances = np.arange(0, line.length, distance_delta)
+# or alternatively without NumPy:
+# points_count = int(line.length // distance_delta) + 1
+# distances = (distance_delta * i for i in range(points_count))
+points = [line.interpolate(distance) for distance in distances] + [line.boundary[1]]
+multipoint = unary_union(points)  # or new_line = LineString(points)
 ```
