@@ -76,3 +76,11 @@ distances = np.arange(0, line.length, distance_delta)
 points = [line.interpolate(distance) for distance in distances] + [line.boundary[1]]
 multipoint = unary_union(points)  # or new_line = LineString(points)
 ```
+
+# get timezone from lat long.
+```javascript
+from timezonefinder import TimezoneFinder
+sub_dc['TZname'] = sub_dc[['Lat', 'Long']].apply(lambda x: tf.timezone_at(lng=x[1], lat=x[0]), axis=1)
+# convert time zone and localize the date.
+sub_dc['localtime'] = sub_dc[['pubDate', 'TZname']].apply(lambda x: pd.to_datetime(x[0], format='%a %b %d %H:%M:%S %z %Y').tz_convert(x[1]).tz_localize(None), axis=1)
+```
