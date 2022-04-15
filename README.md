@@ -31,7 +31,7 @@ pool.join()
 ```
 
 ## parallel computing for for loops
-```{javascript}
+```javascript
 import multiprocessing
 
 pool = multiprocessing.Pool(10)
