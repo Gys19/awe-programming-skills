@@ -30,6 +30,23 @@ pool.close()
 pool.join()
 ```
 
+## parallel computing for for loops
+```{javascript}
+import multiprocessing
+
+pool = multiprocessing.Pool(10)
+# if you have multi-parameters 
+# wrap your function like this
+
+def multi_run_wrapper(args):
+    return yourparallelfunction(*args)
+def yourparallelfunction(para1, para2, ...)
+    return example
+para_list = [(para1, para2, ...) for range(i)]
+# save results
+```
+
+
 ## Git Bash commands
 * initialization, the second line is used to link to your remote repo
 ```
