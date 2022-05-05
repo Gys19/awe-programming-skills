@@ -83,6 +83,13 @@ git push origin --delete <oldname>
 ```
 git push origin -u <newname>
 ```
+* add new files to remote repo
+```
+git add file.jpg file2.jpg file3.pdf
+git commit -m 'comment'
+git push -f origin main
+```
+
 
 ## Some geospatial operations 
 * Geopandas, shapely, osmnx. networkx.
