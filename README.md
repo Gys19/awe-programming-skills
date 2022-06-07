@@ -112,7 +112,7 @@ sub_dc['localtime'] = sub_dc[['pubDate', 'TZname']].apply(lambda x: pd.to_dateti
 ```
 
 # matlab make gif from a set of figures. 
-```javascript
+```Matlab
 % made by Yangsogng on Tue, 6//2022
 % make fig from a set of images
 img_folder = 'C:\Work\isochrone Travel Time\figures\80pct\';
