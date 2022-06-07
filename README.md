@@ -110,3 +110,25 @@ sub_dc['TZname'] = sub_dc[['Lat', 'Long']].apply(lambda x: tf.timezone_at(lng=x[
 # convert time zone and localize the date.
 sub_dc['localtime'] = sub_dc[['pubDate', 'TZname']].apply(lambda x: pd.to_datetime(x[0], format='%a %b %d %H:%M:%S %z %Y').tz_convert(x[1]).tz_localize(None), axis=1)
 ```
+
+# matlab make gif from a set of figures. 
+```javascript
+% made by Yangsogng on Tue, 6//2022
+% make fig from a set of images
+img_folder = 'C:\Work\isochrone Travel Time\figures\80pct\';
+filename = 'isochrone TT.gif'
+for i = 1:24
+    
+    f = [img_folder,sprintf('0_0.8_%d.c.png', i-1)];
+    img = imread(f);
+    [I, map] = rgb2ind(img, 256);
+    if (i==1)
+        imwrite(I, map, filename, 'DelayTime', 0.1, 'LoopCount', Inf)
+    else
+        imwrite(I, map, filename, 'WriteMode', 'append', 'DelayTime', 0.1)
+    end
+end
+```
+
+
+
