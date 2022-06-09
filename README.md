@@ -130,5 +130,12 @@ for i = 1:24
 end
 ```
 
-
+# python subprocess package, run py script as python script
+* good for monitoring the code
+* introduction: https://code.luasoftware.com/tutorials/python/simple-guide-to-subprocess/
+## sample code
+```javascript
+p = subprocess.Popen(['python', 'test.py'])
+```
+the code can be wrapped in a while loop, so that the while loop can continue execute the script if it stopped. 
 
