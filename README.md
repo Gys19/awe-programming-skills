@@ -148,4 +148,14 @@ python -m http.server
 * turn on the google browser, and type: `localhost:8000/index.html` on search window.
 * then, you can use d3.js or fetch method to load local file now. 
 
-
+```javascript
+// let data = fetch("waze.json")
+// 					.then(response => response.json())
+// 					.then(data=> {
+// 						return data
+// 					})
+// console.log(data)
+d3.csv("waze.csv", (d) => {
+    console.log(d)
+})
+```
