@@ -139,3 +139,13 @@ p = subprocess.Popen(['python', 'test.py'])
 ```
 the code can be wrapped in a while loop, so that the while loop can continue execute the script if it stopped. 
 
+
+# JS code if you want to load local csv file or json file when writing HTML 
+* run a virtual web server, go to folder where html file is saved, and open cmd, type
+```javascript
+python -m http.server
+```
+* turn on the google browser, and type: `localhost:8000/index.html` on search window.
+* then, you can use d3.js or fetch method to load local file now. 
+
+
