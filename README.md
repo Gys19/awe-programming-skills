@@ -159,3 +159,21 @@ d3.csv("waze.csv", (d) => {
     console.log(d)
 })
 ```
+
+# numba parallel accelerting the computation
+```javascript
+from numba import jit
+
+@jit(nopython=True)
+def Epanechnikov(h, Xi, x):
+
+    u = (Xi - x)/h
+    kernel = np.empty(u.shape)
+    for idx, xx in enumerate(u):
+        if abs(xx) >1:
+            kernel[idx]=0
+        else:
+            kernel[idx]=(3./4)*(1-xx**2)
+    return kernel
+```
+
