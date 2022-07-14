@@ -176,4 +176,4 @@ def Epanechnikov(h, Xi, x):
             kernel[idx]=(3./4)*(1-xx**2)
     return kernel
 ```
-
+[Reference](https://numba.pydata.org/numba-examples/examples/density_estimation/kernel/results.html)
