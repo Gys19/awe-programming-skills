@@ -177,3 +177,48 @@ def Epanechnikov(h, Xi, x):
     return kernel
 ```
 [Reference](https://numba.pydata.org/numba-examples/examples/density_estimation/kernel/results.html)
+
+
+# plot polyline and polygon on the 3d figure
+```javascript
+from mpl_toolkits.mplot3d import Axes3D
+import matplotlib.pyplot as plt
+fig = plt.figure(figsize=(12,12))
+ax = fig.add_subplot(111, projection='3d')
+scale_z = 1
+ax.get_proj = lambda: np.dot(
+    Axes3D.get_proj(ax), 
+    np.diag([1, 1, scale_z, 1]))
+# Plot routes
+
+heights = [2,3,4,8,9,10]
+for idx, m in enumerate([8,9,10,3,4,5]):
+    
+    temp = gdf_pot.query(f'month=={m}').reset_index(drop=True)
+    temp = temp.query('ROUTE_NUMB==40')
+    for route, geom in zip(gdf_route_explode.NBR_RT2, gdf_route_explode['geometry']):
+
+        x = geom.coords.xy[0]
+        y = geom.coords.xy[1]
+        if route == 'I0040':
+            ax.plot(x, y, zs = heights[idx],
+            c = 'red', linewidth = 1)
+        else:
+            ax.plot(x, y, zs =heights[idx],
+            c = 'gray', linewidth = 0.3)
+        ax.scatter(temp.Long, temp.Lat, zs =heights[idx], marker = 'x', s = 3, color = 'green')
+
+for idx, h in enumerate([2,3,4]):
+    if h<4:
+        for x, y in zip(gdf_mm_target.Coordina_1, gdf_mm_target.Coordina_2):
+            ax.plot([x,x],[y,y],[h,h+1],linestyle = '--',color = '#FE927C',linewidth  =0.6)
+# plot for interuppted section
+for x, y in zip(gdf_mm_target.Coordina_1, gdf_mm_target.Coordina_2):
+    ax.plot([x,x],[y,y],[4,8],linestyle =(0, (3, 10, 1, 10, 1, 10)),color = '#FE927C',linewidth  =1)
+    
+for idx, h in enumerate([8,9,10]):
+    if h <10:
+        for x, y in zip(gdf_mm_target.Coordina_1, gdf_mm_target.Coordina_2):
+            ax.plot([x,x],[y,y],[h,h+1],linestyle = '--',color = '#FE927C',linewidth  =0.6)  
+plt.axis('off')
+```
