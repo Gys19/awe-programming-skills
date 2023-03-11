@@ -222,3 +222,9 @@ for idx, h in enumerate([8,9,10]):
             ax.plot([x,x],[y,y],[h,h+1],linestyle = '--',color = '#FE927C',linewidth  =0.6)  
 plt.axis('off')
 ```
+# run batch file under conda environment
+```javascript
+call C:\Users\User\anaconda3\Scripts\activate.bat
+cd C:\crashVideo\scripts
+python monitor_crash_v4.py
+```
