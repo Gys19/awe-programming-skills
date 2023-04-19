@@ -228,3 +228,11 @@ call C:\Users\User\anaconda3\Scripts\activate.bat
 cd C:\crashVideo\scripts
 python monitor_crash_v4.py
 ```
+
+# change the attributes of colorbar for geopandas when using Divider and append_axes
+```javascript
+cb_ax = fig.axes[1] 
+cb_ax.tick_params(labelsize=13)
+cb_ax.set_ylabel('Lifespan of Hotspots, days',fontsize = 14)
+```
+
